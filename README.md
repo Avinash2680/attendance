@@ -52,7 +52,10 @@ You don't have to worry about anything .
 we have just used html css js, 
 so you don't have to install another packeges.
 
-you can clone the project using git clone https://github.com/AnilHabilelabs/attendance.git
+you can clone the project using
+```
+git clone https://github.com/AnilHabilelabs/attendance.git
+```
 
 Verify the attendance system by navigating to your server address in
 your preferred browser.
