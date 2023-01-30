@@ -25,7 +25,7 @@ signupForm.onsubmit=function(e){
                 arr.push(signupObj);
                 localStorage.setItem("users",JSON.stringify(arr));   
                 notify.textContent="User is Created !";
-                notify.className="signup_alert green";
+                notify.className="signup_alert green"; 
                 removeAlert(notify); 
                 location.href="../index.html";
 
@@ -40,6 +40,10 @@ signupForm.onsubmit=function(e){
     }
     else{
         localStorage.setItem("users",JSON.stringify([signupObj]));
+        notify.textContent="User is Created !";
+        notify.className="signup_alert green"; 
+        removeAlert(notify); 
+        location.href="../index.html";
     }
 
 ;}

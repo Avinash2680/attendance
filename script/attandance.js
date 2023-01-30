@@ -17,10 +17,10 @@ window.onload = function () {
     let student_main_div = document.querySelector(".student_main_div");
     /** date control  */
     let todayDate = new Date();
-    let currentDate = todayDate.toLocaleDateString().split("/");
     let todayDate_div = document.querySelector(".today_date");
-    currentDate = `${currentDate[0]}-${currentDate[1]}-${currentDate[2]}`;
+    let currentDate = `${todayDate.getDate()}-${String((todayDate.getMonth()+1)).length == 1 ? "0" + (todayDate.getMonth()+1) : (todayDate.getMonth()+1)}-${todayDate.getFullYear()}`;
     todayDate_div.innerHTML = "Date : " + currentDate;
+
     /************************* fetch student  */
 
     function fetchStudentDate(currentDate) {

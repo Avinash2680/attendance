@@ -13,28 +13,44 @@ window.onload=function(){
     }
 }
 
-/** Student Add functon */
-let studentForm = document.querySelector(".studentForm");
+/** class Add functon */
+let classForm = document.querySelector(".studentForm");
 let notify = document.querySelector(".student_alert");
-studentForm.onsubmit=function(e){
+classForm.onsubmit=function(e){
     e.preventDefault();
     let studentObj = {};
     Array.from(e.target).forEach((element)=>{
         element.name !== "student_btn" ? studentObj[element.name] = element.value : '';
     });
 
-    /** check students */
+    /** check classess */
         if(localStorage.getItem("students")){
-            let students = JSON.parse(localStorage.getItem("students"));
+            let students = JSON.parse(localStorage.getItem("students"));         
             let loginProfile = students[loginEmail];
             if(loginProfile){
-                loginProfile.push(studentObj);
+                let check = false;
+                loginProfile.forEach((element)=>{
+                    if(element['student_email'] == studentObj['student_email']){
+                        check = true;
+                    }
+                });
+
+                if(!check){
+                    loginProfile.push(studentObj);
                 students[loginEmail] = loginProfile;
                 /** update database */
                 localStorage.setItem("students",JSON.stringify(students));
                 notify.textContent="Student Add successfully !";
                 notify.className="signup_alert green"; 
-                removeAlert(notify);
+                removeAlert(notify); 
+                }
+                else{
+                    notify.textContent="Email already exists !";
+                    notify.className="signup_alert red"; 
+                    removeAlert(notify);
+
+                }
+
             }
             else{
                 students[loginEmail] = [studentObj];

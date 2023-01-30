@@ -53,16 +53,15 @@
                     </div>
                     <br /><br />
                     <h2 class="text-center padding-15 sans mb20">Add Student</h2>
-                    <input type="text" name="student_name" placeholder="Student Name" class="student_name" />
+                    <input type="text" name="student_name" placeholder="Student Name" class="student_name" required />
                     <br />
-                    <input type="text" name="father_name" placeholder="Father Name" class="father_name" />
+                    <input type="text" name="father_name" placeholder="Father Name" class="father_name" required />
                     <br />
-                    <input type="email" name="student_email" placeholder="email" class="student_email" />
+                    <input type="email" name="student_email" placeholder="email" class="student_email" required />
                     <br />
-                    <input type="number" name="student_number" placeholder="Number" class="student_number" />
+                    <input type="number" name="student_number" maxlength="10" placeholder="Number" class="student_number" required />
                     <br />
-                    <select name="class" class="classSelect">
-                        <option>Select Class</option>
+                    <select name="class" class="classSelect" required>
                     </select>
                     <br />
                     <h3 class="student_alert"></h3><br />

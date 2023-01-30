@@ -64,6 +64,7 @@ section{
     width:100%;
 }
 .feature_list li{
+    /* text-align:center; */
     padding:15px;
 }
 .feature_list li a{
@@ -198,6 +199,10 @@ input[type="text"]:focus,input[type="password"]:focus{
     font-size:20px;
     font-weight:bold;
  }
+ .today_date{
+    width:30%;
+    font-size:16px;
+ }
  .filter_search{
     width:30%;
     padding:5px;
@@ -207,13 +212,17 @@ input[type="text"]:focus,input[type="password"]:focus{
 .student_main_div{
     width:100%;
     padding:25px;
-    display:grid;
-    grid-template-columns: repeat(5,250px);
+    /* display:flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap; */
+    display:grid; 
+    grid-template-columns:repeat(auto-fill,250px); 
+    justify-content:center;
+    
 }
 
 .student_main_div .students{
     width:200px;
-    height:200px;
     background-color:white;
     margin-bottom:50px;
     justify-self:center;
@@ -281,4 +290,24 @@ input[type="text"]:focus,input[type="password"]:focus{
 .leave.active{
     background-color:orange;
     color:white;
+}
+@media (max-width:768px){
+    .today_date{
+        display:none;
+    }
+    .filter_search{
+        width:50%;
+    }
+    .menu_open{
+        margin-left:-220px;
+    }
+    .menu_close{
+        margin-left:0px;
+    }
+    .dashboard_minimum{
+        width:100%;
+    }
+    .dashboard_full{
+        width:calc(100% - 220px);
+    }
 }
